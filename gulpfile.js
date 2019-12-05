@@ -20,12 +20,12 @@ function images() {
 }
 
 function js() {
-  return src(['./src/js/resource.js', './src/js/app.js', './src/js/engine.js'])
+  return src(['./src/js/resources.js', './src/js/app.js', './src/js/engine.js'])
     .pipe(babel({ presets: ['@babel/env'] }))
     .pipe(concat('main.js'))
     .pipe(dest('./dest/js'))
     .pipe(uglify())
-    .pipe(dest('./dist/js/'))
+    .pipe(dest('./dest/js/'))
 }
 exports.css = css;
 exports.images = images;
