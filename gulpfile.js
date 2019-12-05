@@ -1,8 +1,10 @@
 const { src, dest, parallel, series, watch } = require('gulp');
 const autoprefixer = require('gulp-autoprefixer');
-let cleancss = require('gulp-clean-css');
+const cleancss = require('gulp-clean-css');
 const imagemin = require('gulp-imagemin');
 const babel = require('gulp-babel');
+const concat = require('gulp-concat');
+
 
 
 function css() {
@@ -19,8 +21,9 @@ function images() {
 }
 
 function js() {
-  return src('./src/js/*')
+  return src(['./src/js/resource.js', './src/js/app.js', './src/js/engine.js'])
     .pipe(babel({ presets: ['@babel/env'] }))
+    .pipe(concat('main.js'))
     .pipe(dest('./dest/js'))
 }
 exports.css = css;
