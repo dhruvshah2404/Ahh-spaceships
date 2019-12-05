@@ -1,0 +1,23 @@
+{
+  "name": "ahhspaceships",
+  "version": "1.0.0",
+  "description": "## Table of Contents",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dhruvshah2404/Ahh-spaceships.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dhruvshah2404/Ahh-spaceships/issues"
+  },
+  "homepage": "https://github.com/dhruvshah2404/Ahh-spaceships#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1"
+  }
+}
