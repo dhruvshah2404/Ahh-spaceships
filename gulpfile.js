@@ -27,6 +27,18 @@ function js() {
     .pipe(uglify())
     .pipe(dest('./dest/js/'))
 }
+
+function copy() {
+  return src('./index.html')
+    .pipe(dest('./dest'))
+}
+
+exports.watchIt = function () {
+  watch('./dest/css/*', css);
+  watch('./dest/js/*.js', js);
+}
 exports.css = css;
 exports.images = images;
 exports.js = js;
+
+exports.all = series(css, images, js, copy, this.watchIt);
