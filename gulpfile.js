@@ -33,12 +33,12 @@ function copy() {
     .pipe(dest('./dest'))
 }
 
-exports.watchIt = function () {
-  watch('./dest/css/*', css);
-  watch('./dest/js/*.js', js);
+function watchIt() {
+  watch('./src/css/*', css);
+  watch('./src/js/*', js);
 }
 exports.css = css;
 exports.images = images;
 exports.js = js;
-
-exports.all = series(css, images, js, copy, this.watchIt);
+exports.watch = watchIt;
+exports.all = series(css, images, js, copy);
