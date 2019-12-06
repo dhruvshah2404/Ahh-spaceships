@@ -133,7 +133,7 @@ var Engine = (function (global) {
      * so that we get the benefits of caching these images, since
      * we're using them over and over.
      */
-    ctx.drawImage(Resources.get('images/background.png'), 0, 0);
+    ctx.drawImage(Resources.get('./src/images/background.png'), 0, 0);
     // }
     //}
 
@@ -146,7 +146,7 @@ var Engine = (function (global) {
    */
   function renderEntities() {
 
-    ctx.drawImage(Resources.get('images/sun.png'), sun.x, sun.y);
+    ctx.drawImage(Resources.get('./src/images/sun.png'), sun.x, sun.y);
 
 
     /* Loop through all of the objects within the allEnemies array and call
@@ -163,7 +163,7 @@ var Engine = (function (global) {
       player.frameIndex = 0;
     }
 
-    const playerImage = Resources.get('images/player.png');
+    const playerImage = Resources.get('./src/images/player.png');
 
     ctx.drawImage(
       playerImage,
@@ -192,7 +192,7 @@ var Engine = (function (global) {
         enemy.frameIndex = 0;
       }
 
-      const image = Resources.get(`images/${enemy.style}-${enemy.direction}.png`);
+      const image = Resources.get(`./src/images/${enemy.style}-${enemy.direction}.png`);
 
       ctx.drawImage(
         image,
@@ -236,17 +236,17 @@ var Engine = (function (global) {
    * all of these images are properly loaded our game will start.
    */
   Resources.load([
-    'images/background.png',
-    'images/enemy1-ltr.png',
-    'images/enemy2-ltr.png',
-    'images/enemy3-ltr.png',
-    'images/enemy1-rtl.png',
-    'images/enemy2-rtl.png',
-    'images/enemy3-rtl.png',
-    'images/enemy4-rtl.png',
-    'images/enemy4-ltr.png',
-    'images/sun.png',
-    'images/player.png',
+    './src/images/background.png',
+    './src/images/enemy1-ltr.png',
+    './src/images/enemy2-ltr.png',
+    './src/images/enemy3-ltr.png',
+    './src/images/enemy1-rtl.png',
+    './src/images/enemy2-rtl.png',
+    './src/images/enemy3-rtl.png',
+    './src/images/enemy4-rtl.png',
+    './src/images/enemy4-ltr.png',
+    './src/images/sun.png',
+    './src/images/player.png',
   ]);
 
   Resources.onReady(init);
