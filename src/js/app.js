@@ -1,4 +1,4 @@
-let lives = 4 - 1;
+let lives = 3;
 let score = 0
 let livesid = document.getElementById('lives');
 let levelid = document.getElementById('score');
@@ -9,7 +9,7 @@ levelid.textContent = 'Level: ' + score;
 function updateLives() {
   lives--;
   livesid.innerHTML = 'Lives: ' + lives;
-  if (lives < 1) {
+  if (lives <= 1) {
     score = 0;
     levelid.textContent = 'Level: ' + score;
     allEnemies.forEach(function (Enemy) {
